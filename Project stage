@@ -26,3 +26,10 @@ MVP
 
 В доработке(есть прототип)
 - скрипт рассылки запросов пациента врачам 
+
+
+
+main-now2.py - оносной файл с ботом 
+scrip_number_check.py - скрипт для проверки номера по смс
+TelegramPassoprtCheck.py - скрипт для работы с модулем TelegramPassopr
+script_location.py - скрипт для построения маршрута
