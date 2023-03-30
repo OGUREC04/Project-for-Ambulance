@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Telegram passport test!</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+</head>
+<body>
+<h1>Telegram passport test</h1>
+
+<div id="telegram_passport_auth"></div>
+</body>
+
+<!--- Needs file from https://github.com/TelegramMessenger/TGPassportJsSDK downloaded --->
+<script src="js/telegram-passport.js"></script>
+<script>
+    "use strict";
+
+    Telegram.Passport.createAuthButton('telegram_passport_auth', {
+        bot_id: 5143376368, // YOUR BOT ID
+        scope: {
+            data: [{
+                type: 'phone_number',
+                // #id_document
+                selfie: true
+            },  'phone_number', 'email'], v: 1
+        }, // WHAT DATA YOU WANT TO RECEIVE
+        public_key:   '-----BEGIN PUBLIC KEY-----\n' +
+            'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp+ldpcb5J9OvEKpnZaz0\n' +
+            'ER+T5v3gqHdHRcDj4EUb53wsfGWqjv65Xdp6HWQ2LoylZ3qWG6sXs5So4PcTZpms\n' +
+            '51KvHLIGQUk1oOSoUWzCI6V251SCphXnxhoG3+5fecvqP4mebj1rvzHzsxGYv2bN\n' +
+            '+5IZ4ntTtFHZ6XthXK+MC7gU+CgDbCRhth6P8Hx41jdZjGW/csQ6QPIfOdckULpM\n' +
+            'XFMAT8xKULhmaXp1JABnCjxPHQV51B2/bfBrFWqclF16qhifMsD2cWlckGhFC+i5\n' +
+            '7+uBajk1eRorZl9uAgrX2CGQ1PMyuh5XSUzV9AU8TSfdfMHPo1CfB/sQym7Odh+H\n' +
+            'FwIDAQAB\n' +
+            '-----END PUBLIC KEY-----', // YOUR PUBLIC KEY
+        nonce: 'thisisatest', // YOUR BOT WILL RECEIVE THIS DATA WITH THE REQUEST
+        callback_url: 'https://example.org' // TELEGRAM WILL SEND YOUR USER BACK TO THIS URL
+    });
+
+</script>
+</html>
